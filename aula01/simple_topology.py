@@ -10,10 +10,10 @@ def topology(remote_controller):
 
     info("*** Adding stations/hosts\n")
 
-    host1 = net.addHost("h1", ip="10.0.1.1/24")
-    host2 = net.addHost("h2", ip="10.0.1.2/24")
+    host1 = net.addHost("host1", ip="10.0.1.1/24")
+    host2 = net.addHost("host2", ip="10.0.1.2/24")
 
-    servidor1 = net.addHost("server1", ip="10.0.1.10/24")
+    servidor1 = net.addHost("servidor1", ip="10.0.1.10/24")
 
     info("*** Adding P4Switches (core)\n")
 
