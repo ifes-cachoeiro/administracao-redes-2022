@@ -5,7 +5,7 @@ from mn_wifi.net import Mininet_wifi
 import time
 import os
 
-BW=1024
+BW=1000
 
 def run_router(router):
     name = router.name
