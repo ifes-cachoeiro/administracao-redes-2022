@@ -21,7 +21,7 @@ def run_router(router):
 def enableSwitch(switch):
     switch.cmd(f"ovs-ofctl add-flow {switch.name} \"actions=output:NORMAL\"")
 
-def addRoute(host=None, route):
+def addRoute(host, route):
     if host:
         host.cmd(f"ip route add {route}")
 
