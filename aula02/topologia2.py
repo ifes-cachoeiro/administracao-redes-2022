@@ -103,6 +103,33 @@ def topology(remote_controller):
     addRoute(h1D, "default via 198.98.99.62")
     addRoute(h2D, "default via 198.98.99.62") 
 
+    # Rede A-B
+    setIP(r1A, "r1A-eth1", "200.1.2.1/30")
+    setIP(r2B, "r2B-eth1", "200.1.2.2/30")
+    # Rede A-C
+    setIP(r1A, "r1A-eth2", "200.1.2.5/30")
+    setIP(r3C, "r3C-eth1", "200.1.2.6/30")
+    # Rede B-D
+    setIP(r2B, "r2B-eth2", "200.1.2.9/30")
+    setIP(r4D, "r4D-eth1", "200.1.2.10/30")
+    # Rede C-D
+    setIP(r3C, "r3C-eth2", "200.1.2.13/30")
+    setIP(r4D, "r4D-eth2", "200.1.2.14/30")
+
+    # A-B
+    addRoute(r1A, "198.98.99.64/27 via 200.1.2.2")
+    addRoute(r2B, "200.15.35.0/24 via 200.1.2.1")
+    # A-C
+    addRoute(r1A, "200.57.59.0/24 via 200.1.2.6")
+    addRoute(r3C, "200.15.35.0/24 via 200.1.2.5")
+    # B-D
+
+    # C-D
+
+    # A-D
+    
+    # B-C
+
     info("*** Running CLI\n")
 
     CLI(net)

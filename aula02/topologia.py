@@ -88,6 +88,18 @@ def topology(remote_controller):
     setIP(r3, "r3-eth1", ip="10.10.102.2/24")
     setIP(r3, "r3-eth2", ip="10.10.101.2/24")
 
+    # Rede A - B
+    addRoute(r1, "192.0.3.0/24 via 10.10.100.2")
+    addRoute(r2, "192.0.2.0/24 via 10.10.100.1")
+
+    # Rede A - C
+    addRoute(r1, "192.0.4.0/24 via 10.10.102.2")
+    addRoute(r3, "192.0.2.0/24 via 10.10.102.1")
+
+    # Rede B - C
+    addRoute(r2, "192.0.4.0/24 via 10.10.101.2")
+    addRoute(r3, "192.0.3.0/24 via 10.10.101.1")
+
     info("*** Running CLI\n")
 
     CLI(net)
