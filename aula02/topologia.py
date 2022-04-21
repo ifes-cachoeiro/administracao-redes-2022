@@ -5,7 +5,8 @@ from mn_wifi.net import Mininet_wifi
 import time
 import os
 
-BW=1000
+BW = 1000
+
 
 def run_router(router):
     name = router.name
@@ -18,16 +19,20 @@ def run_router(router):
         router.cmd(cmd)
         time.sleep(1)
 
+
 def enableSwitch(switch):
-    switch.cmd(f"ovs-ofctl add-flow {switch.name} \"actions=output:NORMAL\"")
+    switch.cmd(f'ovs-ofctl add-flow {switch.name} "actions=output:NORMAL"')
+
 
 def addRoute(host, route):
     if host:
         host.cmd(f"ip route add {route}")
 
+
 def setIP(host, iface=None, ip=None):
     if iface and ip:
         host.cmd(f"ifconfig {iface} {ip} up")
+
 
 def topology(remote_controller):
     "Create a network."
@@ -73,7 +78,7 @@ def topology(remote_controller):
     enableSwitch(switch1)
     enableSwitch(switch2)
     enableSwitch(switch3)
-    
+
     info("*** Setting addresses and routes")
 
     addRoute(h1A, "default via 192.0.2.254")
@@ -120,6 +125,7 @@ def cleanup():
     os.system("chmod 777 /tmp/quagga -R")
     os.system("echo 'hostname zebra' > /etc/quagga/zebra.conf")
     os.system("chmod 777 /etc/quagga/zebra.conf")
+
 
 if __name__ == "__main__":
     # cleanup()
