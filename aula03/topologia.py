@@ -83,8 +83,8 @@ def topology(remote_controller):
     net.addLink(h2C, switch3, bw=BW)
     net.addLink(r7, switch3, bw=BW) # r7(1)
     # Rede D
-    net.addLink(h1C, switch4, bw=BW)
-    net.addLink(h2C, switch4, bw=BW)
+    net.addLink(h1D, switch4, bw=BW)
+    net.addLink(h2D, switch4, bw=BW)
     net.addLink(r7, switch4, bw=BW) # r7(2)
 
     net.addLink(r1, r2, bw=BW) # r1(2), r2(1)
