@@ -25,7 +25,7 @@ def run_service(dhcp_server):
     services = ["dhcpd"]
     for srv in services:
         cmd = f"/usr/sbin/{srv} "
-        cmd += f"-cf /tmp/{srv}/{srv}-{name}.conf -lf /tmp/{srv}/{srv}-{name}.leases"
+        cmd += f"-pf /tmp/{srv}/{name}.pid -cf /tmp/{srv}/{srv}-{name}.conf -lf /tmp/{srv}/{srv}-{name}.leases"
         cmd += f"> /tmp/{srv}/{srv}-{name}-dhcp.log 2>&1"
         dhcp_server.cmd(f"echo > /tmp/{srv}/{srv}-{name}.leases")
         dhcp_server.cmd(cmd)
