@@ -91,7 +91,7 @@ def topology(remote_controller):
     enableSwitch(switch2)
     enableSwitch(switch3)
     enableSwitch(switch4)
-    
+
     info("*** Setting addresses and routes")
 
     # Rota padrao
@@ -127,7 +127,7 @@ def topology(remote_controller):
     # C-D
 
     # A-D
-    
+
     # B-C
 
     info("*** Running CLI\n")
