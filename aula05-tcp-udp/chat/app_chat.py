@@ -41,7 +41,7 @@ class Chat:
         self.msgs.config(state=NORMAL)
         self.msgs.insert(1.0, f"{USUARIO}> {msg}\n")
         self.msgs.config(state=DISABLED)
-        self._notificacoes("conectado!")
+        # self._notificacoes("conectado!")
 
     def _notificacoes(self, msg):
         # Alterar texto de notificacoes
